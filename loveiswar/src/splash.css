@@ -1,0 +1,39 @@
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  background-color: black;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-stack {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.bg-img {
+  width: 100%;
+  position: relative;
+  opacity: 0.3;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+.overlay-img {
+  position: absolute;
+  top: 12%;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
