@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0',   // Bind to all interfaces (LAN)
-    port: 5173,         // Or any port you want
+    port: 5173,  
+    base: '/liw_page/'       // Or any port you want
   }
 
 })
