@@ -60,13 +60,11 @@ function ContactPage() {
 
 function App() {
   return (
-    <Router basename="/liw_page/">
       <Routes>
         <Route path="/" element={<HomeWithSplash />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/store" element={<><Navbar /><Store /><Footer /></>} />
       </Routes>
-    </Router>
   );
 }
 
