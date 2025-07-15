@@ -21,7 +21,7 @@
   width: 100%;
   position: relative;
   opacity: 0.3;
-  animation: fadeIn 1.5s ease-in forwards;
+  animation: fadeIn 1s ease-in forwards;
 }
 
 .overlay-img {

@@ -15,9 +15,9 @@ function Navbar() {
         </div>
         <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
           <li><a href="#">ABOUT US</a></li>
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">SHOP</a></li>
-          <li><a href="#">CONTACT US</a></li>
+          <li><a href="/">HOME</a></li>
+          <li><a href="/store">SHOP</a></li>
+          <li><a href="/contact">CONTACT US</a></li>
         </ul>
 
         <div className="hamburger" onClick={toggleMenu}>

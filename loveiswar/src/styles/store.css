@@ -1,0 +1,126 @@
+/* store.css */
+
+.store-container {
+  background-color: #000;
+  color: #fff;
+  padding: 4rem 1rem;
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+
+/* Store Title */
+.store-title {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  display: inline-block;
+}
+
+/* Sorting section */
+.sort-section {
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sort-section label {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.sort-section select {
+  padding: 0.5rem 1rem;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 0px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.sort-section select:focus {
+  border-color: #ffffff;
+}
+
+/* Grid layout */
+.products-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Product card */
+.product-card {
+  display: flex;
+  justify-content: center;
+}
+
+/* Polaroid Frame Style */
+.polaroid-frame {
+  background: #fff;
+  color: #000;
+  border: 10px solid white;
+  border-bottom: 20px solid white;
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+  width: 100%;
+  max-width: 250px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.polaroid-frame:hover {
+  transform: scale(1.03);
+}
+
+/* Product image */
+.product-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Caption under image */
+.caption {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.caption h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.caption p {
+  margin: 0;
+  color: #e60000;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* Product tag */
+.tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgb(57, 120, 161);
+  color: white;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: 2;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

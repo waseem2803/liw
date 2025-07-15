@@ -1,33 +1,38 @@
 .gallery-section {
   background-color: black;
-  padding: 2rem 0;
-  overflow-x: auto;
-  overflow-y: hidden;
+  padding: 2rem;
+  width: 100vw;
+  box-sizing: border-box;
 }
 
-.gallery-container {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(4, 100px);
-  grid-auto-columns: minmax(20vw, 200px);
-  gap: 10px;
-  padding: 1rem;
-  min-width: 100vw;
+.gallery-masonry {
+  display: flex;
+  margin-left: -10px; /* gutter size fix */
+  width: auto;
 }
 
-.tile {
-  background: #222;
-  border-radius: 0px;
+.gallery-column {
+  padding-left: 10px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Make tiles responsive */
+.masonry-item {
+  margin-bottom: 10px;
+  background-color: #222;
   overflow: hidden;
+  border-radius: 4px;
 }
 
-.tile img {
+/* Image size adapts to column width */
+.masonry-item img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.filler {
-  background: #444; /* Grey tile for empty space */
+.masonry-item:hover img {
+  transform: scale(1.03);
 }
