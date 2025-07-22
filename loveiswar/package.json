@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://waseem2803.github.io/liw_page/",
+  "homepage": "https://loveiswar.in",
   "scripts": {
     "deploy": "npm run build && gh-pages -d dist",
     "dev": "vite",
