@@ -99,13 +99,13 @@
 .caption h4 {
   margin: 0;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .caption p {
   margin: 0;
   color: #e60000;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 0.95rem;
 }
 

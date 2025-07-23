@@ -1,35 +1,41 @@
 import React, { useState } from 'react';
-import '../styles/store.css'; // Make sure this path is correct
+import '../styles/store.css';
 
-// Import your product images
-import product1 from '../assets/popular/hate_front_mk.png';
-import product2 from '../assets/popular/qalb.png';
-import product3 from '../assets/popular/love is war_mock.png';
-import product4 from '../assets/popular/sample.png';
+import productsData from '../data/products.json';
 
-// Product list
-const initialProducts = [
-  { id: 1, name: 'Hate Survivor Tee', price: 799, image: product1, tag: 'HOT' },
-  { id: 2, name: 'The Heart Tee', price: 1299, image: product2, tag: 'NEW' },
-  { id: 3, name: 'Love is War Tee', price: 1999, image: product3, tag: 'LIMITED' },
-  { id: 4, name: 'Butterfly Tee', price: 999, image: product4, tag: 'TRENDING' },
-];
+// Import images
+import hateImg from '../assets/popular/hate_front_mk.png';
+import qalbImg from '../assets/popular/qalb.png';
+import loveIsWarImg from '../assets/popular/love is war_mock.png';
+import sampleImg from '../assets/popular/sample.png';
+
+// Map image filenames to imports
+const imageMap = {
+  "hate_front_mk.png": hateImg,
+  "qalb.png": qalbImg,
+  "love is war_mock.png": loveIsWarImg,
+  "sample.png": sampleImg
+};
+
+// Enhance products with image references
+const initialProducts = productsData.map(product => ({
+  ...product,
+  image: imageMap[product.image]
+}));
 
 function Store() {
   const [sortOption, setSortOption] = useState('relevance');
 
-  // Sort based on user selection
   const sortedProducts = [...initialProducts].sort((a, b) => {
     if (sortOption === 'low-to-high') return a.price - b.price;
     if (sortOption === 'high-to-low') return b.price - a.price;
-    return a.id - b.id; // default relevance
+    return a.id - b.id;
   });
 
   return (
     <section className="store-container">
       <p className="store-title">Shop Our Collection</p>
 
-      {/* Sort dropdown */}
       <div className="sort-section">
         <label htmlFor="sort">Sort by:</label>
         <select
@@ -43,7 +49,6 @@ function Store() {
         </select>
       </div>
 
-      {/* Products Grid */}
       <div className="products-grid">
         {sortedProducts.map((product) => (
           <div className="product-card" key={product.id}>

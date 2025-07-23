@@ -9,7 +9,7 @@ function Contact() {
 
       <form
         className="contact-form"
-        action="https://formsubmit.co/mwas2803@gmail.com"
+        action="https://formsubmit.co/apparel.raven.corp@gmail.com"
         method="POST"
       >
         <input type="hidden" name="_captcha" value="false" />

@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Hate Survivor Tee", "price": 500, "image": "hate_front_mk.png", "tag": "HOT" },
+  { "id": 2, "name": "The Heart Tee", "price": 600, "image": "qalb.png", "tag": "NEW" },
+  { "id": 3, "name": "Love is War Tee", "price": 449, "image": "love is war_mock.png", "tag": "LIMITED" },
+  { "id": 4, "name": "Butterfly Tee", "price": 500, "image": "sample.png", "tag": "TRENDING" }
+]
