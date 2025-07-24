@@ -35,7 +35,8 @@ function Store() {
   return (
     <section className="store-container">
       <p className="store-title">Shop Our Collection</p>
-
+      <p className="note">FYI, Our online store isn’t live yet for direct purchases.
+Click on any product to place your order via WhatsApp — we’ll assist you right away!`</p>
       <div className="sort-section">
         <label htmlFor="sort">Sort by:</label>
         <select
@@ -50,17 +51,28 @@ function Store() {
       </div>
 
       <div className="products-grid">
-        {sortedProducts.map((product) => (
-          <div className="product-card" key={product.id}>
-            <div className="polaroid-frame">
-              <img src={product.image} alt={product.name} className="product-image" />
-              <div className="caption">
-                <h4>{product.name}</h4>
-                <p>₹{product.price}</p>
+        {sortedProducts.map((product) => {
+          const message = encodeURIComponent(`I'm interested in the ${product.name}`);
+          const whatsappUrl = `https://wa.me/918838876287?text=${message}`;
+
+          return (
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="product-card"
+              key={product.id}
+            >
+              <div className="polaroid-frame">
+                <img src={product.image} alt={product.name} className="product-image" />
+                <div className="caption">
+                  <h4>{product.name}</h4>
+                  <p>₹{product.price}</p>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            </a>
+          );
+        })}
       </div>
     </section>
   );
