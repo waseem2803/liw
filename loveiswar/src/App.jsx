@@ -10,6 +10,8 @@ import OurCodeSection from './about';
 import Footer from './footer';
 import PopularProductsSection from './popular';
 import Contact from './pages/contact';
+import Aboutpage from './pages/about_p';
+import Reviews from './review';
 
 // Home Page component with splash logic
 function HomeWithSplash() {
@@ -39,6 +41,7 @@ function HomeWithSplash() {
       <OurCodeSection />
       <GallerySection />
       <PopularProductsSection />
+      <Reviews />
       <Footer />
     </>
   );
@@ -64,6 +67,7 @@ function App() {
         <Route path="/" element={<HomeWithSplash />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/store" element={<><Navbar /><Store /><Footer /></>} />
+        <Route path="/about" element={<><Navbar /><Aboutpage /><Footer /></>} />
       </Routes>
   );
 }

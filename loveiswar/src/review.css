@@ -1,0 +1,87 @@
+.reviews-container {
+  padding: 2rem;
+  background-color: #000000;
+  color: #fff;
+}
+
+.reviews-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'DM Serif Text', serif;
+}
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -15px; /* gutter */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 15px;
+  background-clip: padding-box;
+}
+
+.review-card {
+  background-color: #141414;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.review-card:hover {
+  transform: scale(1.02);
+  z-index: 10;
+}
+
+.review-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.review-image-left {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.review-text {
+  font-size: 1rem;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.review-hover {
+  margin-top: 0.75rem;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.review-card:hover .review-hover {
+  opacity: 1;
+  max-height: 300px;
+}
+
+.review-insta {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #ccc;
+}

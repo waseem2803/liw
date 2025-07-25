@@ -14,7 +14,7 @@ function Navbar() {
           <img src={logo} alt="Logo" />
         </div>
         <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
-          <li><a href="#">ABOUT US</a></li>
+          <li><a href="/about">ABOUT US</a></li>
           <li><a href="/">HOME</a></li>
           <li><a href="/store">SHOP</a></li>
           <li><a href="/contact">CONTACT US</a></li>

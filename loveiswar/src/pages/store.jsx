@@ -35,8 +35,7 @@ function Store() {
   return (
     <section className="store-container">
       <p className="store-title">Shop Our Collection</p>
-      <p className="note">FYI, Our online store isn’t live yet for direct purchases.
-Click on any product to place your order via WhatsApp — we’ll assist you right away!`</p>
+      <p className="note">FYI, online checkout isn’t available yet. Tap a product to order via WhatsApp. We'll assist you right away!</p>
       <div className="sort-section">
         <label htmlFor="sort">Sort by:</label>
         <select
