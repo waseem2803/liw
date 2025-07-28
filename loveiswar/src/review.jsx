@@ -10,15 +10,15 @@ const reviews = [
   {
     id: 1,
     text: "Absolutely loved the vibe of the shirt!",
-    fullText: "I'm very satisfied with the quality of the Tshirt and it made me to love the Oversized one. The Design HOPE was very Bold and gud to look. I'm very much satisfied to buy it.",
+    fullText: "I'm very satisfied with the quality of the Tshirt and it made me to love the Oversized one. The Design HOPE was very Bold and gud to look.",
     image: img1,
     instagram: "@_.aswin_.18"
   },
   {
     id: 2,
-    text: "Quality exceeded my expectations!",
-    fullText: "Quality exceeded my expectations! I’ve worn it multiple times and it still looks brand new.",
-    instagram: "@streetfitguy"
+    text: "unexpected!",
+    fullText: "Great value for money , the fabric and print quality really stood out.Didn’t expect this level of finish from a new brand.",
+    instagram: "@shobanrajn"
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const reviews = [
 const breakpointColumnsObj = {
   default: 4,
   1100: 3,
-  700: 2,
+  700: 3,
   500: 2
 };
 
