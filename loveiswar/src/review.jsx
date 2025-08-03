@@ -3,7 +3,7 @@ import Masonry from 'react-masonry-css';
 import './review.css';
 
 import img1 from './assets/reviewers/ashwin.jpg';
-import img3 from './assets/reviewers/img4.jpg';
+import img3 from './assets/reviewers/img3.jpg';
 import img4 from './assets/reviewers/img4.jpg';
 
 const reviews = [
@@ -22,8 +22,9 @@ const reviews = [
   },
   {
     id: 3,
-    text: "Coolest drop yet!",
-    fullText: "Coolest drop yet! The oversized fit is 🔥🔥🔥.",
+    text: "BlackTastic !!!",
+    fullText: "BlackTastic! The fabric feels great and the design is so unique.",
+    instagram: "@mr.snite_tamil",
     image: img3
   },
   {
@@ -43,7 +44,7 @@ const reviews = [
 const breakpointColumnsObj = {
   default: 4,
   1100: 3,
-  700: 3,
+  700: 2,
   500: 2
 };
 
