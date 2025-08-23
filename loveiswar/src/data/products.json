@@ -1,6 +1,6 @@
 [
-  { "id": 1, "name": "Hate Survivor Tee", "price": 500, "image": "hate_front_mk.png", "tag": "HOT" },
-  { "id": 2, "name": "The Heart Tee", "price": 600, "image": "qalb.png", "tag": "NEW" },
-  { "id": 3, "name": "Love is War Tee", "price": 449, "image": "love is war_mock.png", "tag": "LIMITED" },
-  { "id": 4, "name": "Butterfly Tee", "price": 500, "image": "sample.png", "tag": "TRENDING" }
+  { "id": 1, "name": "Love is War legacy Tee", "price": 499, "image": "liw_p1.avif", "tag": "HOT" },
+  { "id": 2, "name": "Hope Tee", "price": 399, "image": "hope_p2.avif", "tag": "NEW" },
+  { "id": 3, "name": "The Cupid Tee", "price": 499, "image": "cupid_p3.avif", "tag": "LIMITED" },
+  { "id": 4, "name": "Love is war BRWN Tee", "price": 499, "image": "brown_p4.avif", "tag": "TRENDING" }
 ]

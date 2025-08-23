@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import './carousel.css';
 
-import img1 from './assets/carousel/img1.jpg';
-import img2 from './assets/carousel/img2.jpg';
-import img3 from './assets/carousel/img3.jpg';
+import img1 from './assets/carousel/img1.avif';
+import img2 from './assets/carousel/img2.avif';
+import img3 from './assets/carousel/img3.avif';
 
 const images = [img1, img2, img3];
 

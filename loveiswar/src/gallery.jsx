@@ -2,15 +2,14 @@ import React from 'react';
 import Masonry from 'react-masonry-css';
 import './gallery.css';
 
-import img1 from './assets/gallery/img1.png';
-import img2 from './assets/gallery/img2.jpg';
-import img3 from './assets/gallery/img3.png';
-import img6 from './assets/gallery/img6.jpg';
-import img7 from './assets/gallery/img7.jpg';
-import img8 from './assets/gallery/hope.jpg';
-import img9 from './assets/gallery/liw.jpg';
+import img1 from './assets/gallery/img1.avif';
+import img3 from './assets/gallery/img2.avif';
+import img7 from './assets/gallery/img7.avif';
+import img8 from './assets/gallery/hope.avif';
+import img9 from './assets/gallery/liw.avif';
 import gif1 from './assets/gallery/liw_vid.gif';
-const images = [img1, img2, img3, gif1, img6, img7, img8, img9];
+import gif2 from './assets/gallery/hope_medium.gif';
+const images = [img1, img3, gif1, img7, img8, img9, gif2];
 
 const breakpointColumnsObj = {
   default: 5,

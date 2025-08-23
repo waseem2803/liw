@@ -6,10 +6,11 @@
 
 body {
   background: #121212;
+  overflow-x: hidden;
 }
 
 .navbar {
-  width: 100%;
+  width: 100vw;
   height:60px;
   background-color: black;
   padding: 1rem 0;

@@ -31,13 +31,6 @@ const reviews = [
     id: 4,
     text: "Minimal but speaks volumes and changed how people see streetwear in my circle.",
     fullText: "Minimal but speaks volumes. Everyone asked me where I got it from!",
-  },
-  {
-    id: 5,
-    text: "Fits perfectly and feels premium.",
-    fullText: "Fits perfectly and feels premium. Keep making more like these!",
-    image: img4,
-    instagram: "@wearbyray"
   }
 ];
 

@@ -4,17 +4,17 @@ import '../styles/store.css';
 import productsData from '../data/products.json';
 
 // Import images
-import hateImg from '../assets/popular/hate_front_mk.png';
-import qalbImg from '../assets/popular/qalb.png';
-import loveIsWarImg from '../assets/popular/love is war_mock.png';
-import sampleImg from '../assets/popular/sample.png';
+import product1 from '../assets/products/liw_p1.avif';
+import product2 from '../assets/products/hope_p2.avif';
+import product3 from '../assets/products/cupid_p3.avif';
+import product4 from '../assets/products/brown_p4.avif';
 
 // Map image filenames to imports
 const imageMap = {
-  "hate_front_mk.png": hateImg,
-  "qalb.png": qalbImg,
-  "love is war_mock.png": loveIsWarImg,
-  "sample.png": sampleImg
+  "liw_p1.avif": product1,
+  "hope_p2.avif": product2,
+  "cupid_p3.avif": product3,
+  "brown_p4.avif": product4
 };
 
 // Enhance products with image references
