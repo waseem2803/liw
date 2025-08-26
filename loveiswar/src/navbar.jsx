@@ -10,14 +10,16 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-inner">
-        <div className="logo">
+        <div className="logo" onClick={() => window.location.href = '/'}>
           <img src={logo} alt="Logo" />
+
         </div>
         <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
           <li><a href="/about">ABOUT US</a></li>
           <li><a href="/">HOME</a></li>
           <li><a href="/store">SHOP</a></li>
           <li><a href="/contact">CONTACT US</a></li>
+          <li><a href="/login">LOGIN</a></li>
         </ul>
 
         <div className="hamburger" onClick={toggleMenu}>

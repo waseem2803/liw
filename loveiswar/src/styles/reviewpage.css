@@ -1,0 +1,147 @@
+.reviews-page {
+  margin-top: 70px; /* Adjust based on navbar height */
+  padding: 2rem;
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.reviews-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'DM Serif Text', serif;
+}
+
+
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.review-form h3 {
+  text-align: center;
+  font-family: 'DM Serif Text', serif;
+}
+
+.review-form input,
+.review-form textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  background: #111;
+  color: #fff;
+}
+
+.review-form input::placeholder,
+.review-form textarea::placeholder {
+  color: #888;
+}
+
+.review-form button {
+  padding: 0.75rem;
+  border: none;
+  width: 150px;
+  margin-top: 1rem;
+  align-self: center;
+  background: #fff;
+  color: #000;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.review-form button:hover {
+  background: #ddd;
+}
+
+/* Masonry */
+.my-masonry-grid {
+  display: flex;
+  margin-left: -1rem;
+  width: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .my-masonry-grid {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+.my-masonry-grid_column {
+  padding-left: 1rem;
+  background-clip: padding-box;
+}
+
+/* Review cards */
+.review-card {
+  background: #111;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.review-card:hover {
+  transform: scale(1.02);
+}
+
+.review-text {
+  font-size: 1rem;
+  font-style: italic;
+  color: #ddd;
+}
+
+/* Dropdown effect */
+.review-dropdown {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.review-dropdown.show {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 0.5rem;
+}
+
+.review-full {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.review-insta {
+  font-size: 0.85rem;
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* See more button */
+.see-more-btn {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  color: #000;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.see-more-btn:hover {
+  background: #ddd;
+}

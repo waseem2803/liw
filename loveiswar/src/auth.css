@@ -1,0 +1,86 @@
+.auth-container {
+  background-color: #0d0d0d;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-box {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 0px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  width: 320px;
+  text-align: center;
+}
+
+.auth-box h2 {
+  margin-bottom: 1rem;
+}
+
+.auth-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-inputs input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #2a2a2a;
+  color: white;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #aaa;
+}
+
+.auth-button {
+  background: #b50505;
+  border: none;
+  color: white;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.auth-button:hover {
+  background: #db4437;
+}
+
+.auth-button.google {
+  background: #db4437;
+  margin-bottom: 30px;
+}
+
+.auth-button.google:hover {
+  background: #b23121;
+}
+
+.auth-toggle {
+  margin-top: 15px;
+  cursor: pointer;
+  color: #18bad6;
+  font-size: 0.9rem;
+}
+
+.auth-toggle:hover {
+  text-decoration: underline;
+}

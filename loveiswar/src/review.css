@@ -1,88 +1,82 @@
 .reviews-container {
   padding: 2rem;
-  background-color: #000000;
+  background: #000;
+  padding-left: 10%;
+  padding-right: 10%;
   color: #fff;
-  width: 100vw;
+  text-align: center;
 }
 
 .reviews-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  font-family: 'DM Serif Text', serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
-.my-masonry-grid {
+.masonry-grid {
   display: flex;
-  margin-left: -15px; /* gutter */
+  margin-left: -1rem;
   width: auto;
 }
 
-.my-masonry-grid_column {
-  padding-left: 15px;
+.masonry-grid_column {
+  padding-left: 1rem;
   background-clip: padding-box;
 }
 
 .review-card {
-  background-color: #141414;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  background: #111;
+  border-radius: 0px;
   padding: 1rem;
-  transition: transform 0.3s ease;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
   overflow: hidden;
-  position: relative;
-}
-
-.review-card:hover {
-  transform: scale(1.02);
-  z-index: 10;
-}
-
-.review-inner {
-  display: flex;
-  flex-direction: column;
-}
-
-.review-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.review-image-left {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  object-fit: cover;
-  flex-shrink: 0;
 }
 
 .review-text {
   font-size: 1rem;
-  flex: 1;
-  line-height: 1.4;
+  font-style: italic;
+  color: #ddd;
 }
 
-.review-hover {
-  margin-top: 0.75rem;
-  background-color: #222;
-  border-radius: 8px;
-  padding: 0.75rem;
-  font-size: 0.95rem;
-  opacity: 0;
+.review-dropdown {
   max-height: 0;
+  opacity: 0;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
-.review-card:hover .review-hover {
+.review-dropdown.show {
+  max-height: 500px; /* enough for expansion */
   opacity: 1;
-  max-height: 300px;
+  margin-top: 0.5rem;
+}
+
+.review-full {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
 }
 
 .review-insta {
-  margin-top: 0.5rem;
-  font-style: italic;
-  color: #ccc;
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.see-more-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 20px;
+  text-decoration: none;
+  width: 150px;
+  transition: background 0.3s;
+}
+
+.see-more-btn:hover {
+  background: #ddd;
 }

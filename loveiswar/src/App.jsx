@@ -11,8 +11,9 @@ import Footer from './footer';
 import PopularProductsSection from './popular';
 import Contact from './pages/contact';
 import Aboutpage from './pages/about_p';
-import Reviews from './review';
-
+import HighlightReviews from './review';
+import ReviewsPage from './pages/reviewpage';
+import Auth from './auth';
 // Home Page component with splash logic
 function HomeWithSplash() {
   const [splashDone, setSplashDone] = useState(() => {
@@ -41,7 +42,7 @@ function HomeWithSplash() {
       <OurCodeSection />
       <GallerySection />
       <PopularProductsSection />
-      <Reviews />
+      <HighlightReviews />
       <Footer />
     </>
   );
@@ -58,8 +59,23 @@ function ContactPage() {
   );
 }
 
+function Reviewspage() {
+  return (<>
+      <Navbar />
+      <ReviewsPage />
+      <Footer />
+    </>
+  );
+}
 
-
+function Authpage() {
+  return (<>
+      <Navbar />
+      <Auth />
+      <Footer />
+    </>
+  );
+}
 
 function App() {
   return (
@@ -68,6 +84,8 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/store" element={<><Navbar /><Store /><Footer /></>} />
         <Route path="/about" element={<><Navbar /><Aboutpage /><Footer /></>} />
+        <Route path="/reviews" element={<Reviewspage />} />
+        <Route path="/login" element={<Authpage />} />
       </Routes>
   );
 }

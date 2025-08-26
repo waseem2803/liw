@@ -1,76 +1,78 @@
-import React from 'react';
-import Masonry from 'react-masonry-css';
-import './review.css';
+// src/HighlightReviews.jsx
+import React, { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebaseconfig";
+import Masonry from "react-masonry-css";
+import "./review.css";
 
-import img1 from './assets/reviewers/ashwin.jpg';
-import img3 from './assets/reviewers/img3.jpg';
-import img4 from './assets/reviewers/img4.jpg';
+const HighlightReviews = () => {
+  const [reviews, setReviews] = useState([]);
+  const [expanded, setExpanded] = useState(null); // track expanded card
 
-const reviews = [
-  {
-    id: 1,
-    text: "Absolutely loved the vibe of the shirt!",
-    fullText: "I'm very satisfied with the quality of the Tshirt and it made me to love the Oversized one. The Design HOPE was very Bold and gud to look.",
-    image: img1,
-    instagram: "@_.aswin_.18"
-  },
-  {
-    id: 2,
-    text: "unexpected!",
-    fullText: "Great value for money , the fabric and print quality really stood out.Didn’t expect this level of finish from a new brand.",
-    instagram: "@shobanrajn"
-  },
-  {
-    id: 3,
-    text: "BlackTastic !!!",
-    fullText: "BlackTastic! The fabric feels great and the design is so unique.",
-    instagram: "@mr.snite_tamil",
-    image: img3
-  },
-  {
-    id: 4,
-    text: "Minimal but speaks volumes and changed how people see streetwear in my circle.",
-    fullText: "Minimal but speaks volumes. Everyone asked me where I got it from!",
-  }
-];
+  useEffect(() => {
+    const fetchReviews = async () => {
+      const snapshot = await getDocs(collection(db, "review"));
+      const allReviews = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
 
-const breakpointColumnsObj = {
-  default: 4,
-  1100: 3,
-  700: 2,
-  500: 2
-};
+      // Shuffle and take 5 random reviews
+      const shuffled = allReviews.sort(() => 0.5 - Math.random());
+      setReviews(shuffled.slice(0, 5));
+    };
 
-const Reviews = () => {
+    fetchReviews();
+  }, []);
+
+  const toggleExpand = (id) => {
+    setExpanded(expanded === id ? null : id);
+  };
+
   return (
     <div className="reviews-container">
       <h2 className="reviews-title">What People Say</h2>
+
       <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
+        breakpointCols={{ default: 4, 1100: 3, 700: 2 }}
+        className="masonry-grid"
+        columnClassName="masonry-grid_column"
       >
         {reviews.map((review) => (
-          <div key={review.id} className="review-card">
-            <div className="review-inner">
-              <div className="review-header">
-                {review.image && (
-                  <img src={review.image} alt="Reviewer" className="review-image-left" />
-                )}
-                <p className="review-text">{review.text}</p>
-              </div>
-              <div className="review-hover">
-                <p>{review.fullText}</p>
-                {review.instagram && (
-                  <p className="review-insta">{review.instagram}</p>
-                )}
-              </div>
+          <div
+            key={review.id}
+            className={`review-card ${expanded === review.id ? "expanded" : ""}`}
+            onClick={() => toggleExpand(review.id)}
+          >
+            {/* Always show preview text */}
+            <p className="review-text">
+              "{review.text}"
+            </p>
+
+            {/* Expand to show full review & Instagram */}
+            <div className={`review-dropdown ${expanded === review.id ? "show" : ""}`}>
+              {review.fullText && <p className="review-full">{review.fullText}</p>}
+              {review.instagram && (
+                <a
+                  href={`https://instagram.com/${review.instagram.replace("@", "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="review-insta"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {review.instagram}
+                </a>
+              )}
             </div>
           </div>
         ))}
       </Masonry>
+
+      <a href="/reviews" className="see-more-btn">
+        More Reviews
+      </a>
     </div>
   );
 };
 
-export default Reviews;
+export default HighlightReviews;
