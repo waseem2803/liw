@@ -65,18 +65,22 @@
   text-decoration: underline;
 }
 
-.see-more-btn {
+.morebtn  {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1.2rem;
-  background: #ffffff;
-  color: #000000;
-  border-radius: 20px;
+  background: #6c6c6c;
+  color: #ffffff;
+  border-radius: 14px;
   text-decoration: none;
-  width: 150px;
+  width: 160px;
   transition: background 0.3s;
 }
 
-.see-more-btn:hover {
-  background: #ddd;
+.morebtn:hover {
+  background-color:#ffffff;
+  color: #000000;
+  border: 2px solid rgb(255, 255, 255);
+
+  outline: none;
 }

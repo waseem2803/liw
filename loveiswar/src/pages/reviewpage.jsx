@@ -1,5 +1,6 @@
 // src/ReviewsPage.jsx
 import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   collection,
   query,
@@ -10,7 +11,8 @@ import {
   addDoc,
   serverTimestamp,
 } from "firebase/firestore";
-import { db } from "../firebaseconfig";
+import { db, auth } from "../firebaseconfig"; // make sure auth is exported in firebaseconfig
+import { onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import Masonry from "react-masonry-css";
 import "../styles/reviewpage.css";
 
@@ -20,7 +22,11 @@ const breakpointColumnsObj = {
   700: 2,
 };
 
+
 const ReviewsPage = () => {
+
+  const navigate = useNavigate();
+  const location = useLocation();  
   const [reviews, setReviews] = useState([]);
   const [lastDoc, setLastDoc] = useState(null);
   const [loadingMore, setLoadingMore] = useState(false);
@@ -28,6 +34,16 @@ const ReviewsPage = () => {
 
   const [form, setForm] = useState({ text: "", fullText: "", instagram: "" });
   const [expanded, setExpanded] = useState(null);
+
+  const [user, setUser] = useState(null); // track login state
+
+  // Listen for auth changes
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsub();
+  }, []);
 
   // Initial fetch
   useEffect(() => {
@@ -77,9 +93,12 @@ const ReviewsPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.text || !form.fullText) return;
+    if (!user) return alert("You must be logged in to submit a review.");
 
     await addDoc(collection(db, "review"), {
       ...form,
+      userId: user.uid,
+      userName: user.displayName || "Anonymous",
       timestamp: serverTimestamp(),
     });
 
@@ -91,34 +110,50 @@ const ReviewsPage = () => {
     setExpanded(expanded === id ? null : id);
   };
 
+  const loginWithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (err) {
+      console.error("Login failed", err);
+    }
+  };
+
   return (
     <div className="reviews-page">
       <h2 className="reviews-title">All Reviews</h2>
 
-      {/* Review Form */}
-      <form onSubmit={handleSubmit} className="review-form">
-        <h3>Submit Your Review</h3>
-        <input
-          type="text"
-          placeholder="Short Title"
-          value={form.text}
-          onChange={(e) => setForm({ ...form, text: e.target.value })}
-          required
-        />
-        <textarea
-          placeholder="Full Review"
-          value={form.fullText}
-          onChange={(e) => setForm({ ...form, fullText: e.target.value })}
-          required
-        />
-        <input
-          type="text"
-          placeholder="@instagram (optional)"
-          value={form.instagram}
-          onChange={(e) => setForm({ ...form, instagram: e.target.value })}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      {/* Review Form (only if logged in) */}
+      {user ? (
+        <form onSubmit={handleSubmit} className="review-form">
+          <h3>Submit Your Review</h3>
+          <input
+            type="text"
+            placeholder="Short Title"
+            value={form.text}
+            onChange={(e) => setForm({ ...form, text: e.target.value })}
+            required
+          />
+          <textarea
+            placeholder="Full Review"
+            value={form.fullText}
+            onChange={(e) => setForm({ ...form, fullText: e.target.value })}
+            required
+          />
+          <input
+            type="text"
+            placeholder="@instagram (optional)"
+            value={form.instagram}
+            onChange={(e) => setForm({ ...form, instagram: e.target.value })}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      ) : (
+        <div className="login-prompt">
+          <p>Login to submit a review about us.</p>
+          <button onClick={() =>  navigate("/login", { state: { from: location.pathname } })}>Login to loveiswar</button>
+        </div>
+      )}
 
       {/* All Reviews */}
       <Masonry
@@ -144,10 +179,7 @@ const ReviewsPage = () => {
               )}
               {review.instagram && (
                 <a
-                  href={`https://instagram.com/${review.instagram.replace(
-                    "@",
-                    ""
-                  )}`}
+                  href={`https://instagram.com/${review.instagram.replace("@", "")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="review-insta"
@@ -155,6 +187,9 @@ const ReviewsPage = () => {
                 >
                   {review.instagram}
                 </a>
+              )}
+              {review.userName && (
+                <p className="review-user">— {review.userName}</p>
               )}
             </div>
           </div>

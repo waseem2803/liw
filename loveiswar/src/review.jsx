@@ -1,11 +1,15 @@
 // src/HighlightReviews.jsx
 import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom"; 
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./firebaseconfig";
 import Masonry from "react-masonry-css";
 import "./review.css";
 
 const HighlightReviews = () => {
+
+  const navigate = useNavigate();
+  const location = useLocation();
   const [reviews, setReviews] = useState([]);
   const [expanded, setExpanded] = useState(null); // track expanded card
 
@@ -68,9 +72,9 @@ const HighlightReviews = () => {
         ))}
       </Masonry>
 
-      <a href="/reviews" className="see-more-btn">
+      <button onClick={() => navigate("/reviews")} className="morebtn">
         More Reviews
-      </a>
+      </button>
     </div>
   );
 };

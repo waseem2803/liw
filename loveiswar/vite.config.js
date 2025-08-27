@@ -9,6 +9,16 @@ export default defineConfig({
     host: '0.0.0.0',   // Bind to all interfaces (LAN)
     port: 5173,  
            // Or any port you want
+  },
+   build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          firebase: ["firebase/app", "firebase/firestore"],
+          react: ["react", "react-dom"],
+        },
+      },
+    },
   }
 
 })

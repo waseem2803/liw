@@ -1,5 +1,5 @@
 // src/Auth.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   getAuth,
   GoogleAuthProvider,
@@ -7,8 +7,10 @@ import {
   signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { app } from "./firebaseconfig";
+import { useNavigate, useLocation } from "react-router-dom"; // ✅ added
 import "./auth.css";
 
 const auth = getAuth(app);
@@ -22,11 +24,24 @@ export default function Auth() {
   const [isSignup, setIsSignup] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from || "/"; // redirect back here after login/signup
+
+  // Track auth state globally
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsub();
+  }, []);
+
   // Google login
   const handleGoogleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       setUser(result.user);
+      navigate(from, { replace: true }); // ✅ redirect back
     } catch (err) {
       console.error(err.message);
     }
@@ -41,6 +56,7 @@ export default function Auth() {
     try {
       const result = await createUserWithEmailAndPassword(auth, email, password);
       setUser(result.user);
+      navigate(from, { replace: true }); // ✅ redirect back
     } catch (err) {
       console.error(err.message);
     }
@@ -51,6 +67,7 @@ export default function Auth() {
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
       setUser(result.user);
+      navigate(from, { replace: true }); // ✅ redirect back
     } catch (err) {
       console.error(err.message);
     }
@@ -66,7 +83,7 @@ export default function Auth() {
     <div className="auth-container">
       {user ? (
         <div className="auth-welcome">
-          <p>Welcome, {user.email || user.displayName}</p>
+          <p>You are logged in as <strong>{user.email || user.displayName}</strong></p>
           <button className="auth-button" onClick={handleLogout}>
             Logout
           </button>
