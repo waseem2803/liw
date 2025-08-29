@@ -13,7 +13,11 @@ import Contact from './pages/contact';
 import Aboutpage from './pages/about_p';
 import HighlightReviews from './review';
 import ReviewsPage from './pages/reviewpage';
+import ProductDetail from './pages/ProductDetail';
 import Auth from './auth';
+import CartPage from './pages/CartPage';
+
+
 // Home Page component with splash logic
 function HomeWithSplash() {
   const [splashDone, setSplashDone] = useState(() => {
@@ -86,6 +90,8 @@ function App() {
         <Route path="/about" element={<><Navbar /><Aboutpage /><Footer /></>} />
         <Route path="/reviews" element={<Reviewspage />} />
         <Route path="/login" element={<Authpage />} />
+        <Route path="/product/:id" element={<><Navbar /><ProductDetail /><Footer /></>} />
+        <Route path="/cart" element={<><Navbar /><CartPage /><Footer /></>} />
       </Routes>
   );
 }

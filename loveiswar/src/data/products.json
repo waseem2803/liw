@@ -1,6 +1,54 @@
 [
-  { "id": 1, "name": "Love is War legacy Tee", "price": 499, "image": "liw_p1.avif", "tag": "HOT" },
-  { "id": 2, "name": "Hope Tee", "price": 399, "image": "hope_p2.avif", "tag": "NEW" },
-  { "id": 3, "name": "The Cupid Tee", "price": 499, "image": "cupid_p3.avif", "tag": "LIMITED" },
-  { "id": 4, "name": "Love is war BRWN Tee", "price": 499, "image": "brown_p4.avif", "tag": "TRENDING" }
+  { 
+    "id": 1, 
+    "name": "Love is War legacy Tee", 
+    "price": 499, 
+    "image": "liw_p1.avif", 
+    "tag": "HOT",
+    "description": "Premium oversized cotton tee with our classic Love is War design.",
+    "images": ["liw_p1.avif"],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Black"],
+    "stock": 25,
+    "material": "100% French Terry Cotton 240gsm"
+  },
+  { 
+    "id": 2, 
+    "name": "Hope Tee", 
+    "price": 399, 
+    "image": "hope_p2.avif", 
+    "tag": "NEW",
+    "description": "A soft oversized tee symbolizing hope and resilience.",
+    "images": ["hope_p2.avif"],
+    "sizes": ["M", "L", "XL"],
+    "colors": ["Black", "off-white"],
+    "stock": 40,
+    "material": "100% French Terry Cotton 240gsm"
+  },
+  { 
+    "id": 3, 
+    "name": "The Cupid Tee", 
+    "price": 499, 
+    "image": "cupid_p3.avif", 
+    "tag": "LIMITED",
+    "description": "Exclusive limited-edition tee featuring retro Cupid artwork.",
+    "images": ["cupid_p3.avif", "cupid_p4f.avif"],
+    "sizes": ["S", "M", "L"],
+    "colors": ["Black"],
+    "stock": 12,
+    "material": "100% French Terry Cotton 240gsm"
+  },
+  { 
+    "id": 4, 
+    "name": "Love is War BRWN Tee", 
+    "price": 499, 
+    "image": "brown_p4.avif", 
+    "tag": "TRENDING",
+    "description": "Earthy brown oversized tee with a bold Love is War print.",
+    "images": ["brown_p4.avif"],
+    "sizes": ["M", "L", "XL", "XXL"],
+    "colors": ["Brown"],
+    "stock": 30,
+    "material": "100% French Terry Cotton 210gsm"
+  }
 ]

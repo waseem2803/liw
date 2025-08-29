@@ -13,7 +13,6 @@ function Footer() {
       <div className="social-icons">
         <a href="https://www.instagram.com/loveiswar.in?utm_source=ig_web_button_share_sheet&igsh=YXh2cWtnYW5hZGRy" target="_blank" rel="noreferrer"><FaInstagram /></a>
         <a href="https://wa.me/+918838876287" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
-        <a href="https://facebook.com" target="_blank" rel="noreferrer"><FaFacebookF /></a>
       </div>
 
       <p className="copyright">
