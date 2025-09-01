@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/store.css";
+import { FaShoppingCart } from 'react-icons/fa';
+import { useCart } from "../context/CartContext";
 
 import productsData from "../data/products.json";
 
@@ -49,25 +51,34 @@ function Store() {
     return a.id - b.id;
   });
 
+  const { cart } = useCart();
+  const itemCount = cart.length;
+
   return (
     <section className="store-container">
       <p className="store-title">Shop Our Collection</p>
       <p className="note">
-        FYI, online checkout isn’t available yet. Tap a product to order via
+        FYI, online checkout isn’t available yet. Add the products to cart and checkout to order via
         WhatsApp. We'll assist you right away!
       </p>
-
-      <div className="sort-section">
-        <label htmlFor="sort">Sort by:</label>
-        <select
-          id="sort"
-          value={sortOption}
+      <div className="top-bar">
+        <div className="sort-section">
+          <label htmlFor="sort">Sort by:</label>
+          <select
+            id="sort"
+            value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
         >
           <option value="relevance">Relevance</option>
           <option value="low-to-high">Price: Low to High</option>
           <option value="high-to-low">Price: High to Low</option>
         </select>
+      </div>
+      
+      <div className="cart-icon" onClick={() => window.location.href='/cart'}>
+          <FaShoppingCart size={24} color="white" />
+        <span className="cart-count">{itemCount}</span>
+        </div>
       </div>
 
       <div className="products-grid">

@@ -38,7 +38,7 @@ function OurCodeSection() {
             onMouseLeave={() => setActiveIndex(null)}
             onClick={() => toggleActive(idx)} // For mobile
           >
-            <p style={{fontSize:'2rem'}}>{topic.title}</p>
+            <p className="our-code-title" style={{fontSize:'2rem'}}>{topic.title}</p>
             <p>{activeIndex === idx ? topic.full : topic.brief}</p>
           </div>
         ))}

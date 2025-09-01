@@ -10,6 +10,31 @@ const Cart = () => {
     0
   );
 
+  const checkoutOnWhatsApp = () => {
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  // Build order message
+  let message = "🛒 *New Order Details*%0A%0A";
+  cart.forEach((item, index) => {
+    message += `${index + 1}. ${item.name} | Size: ${item.size} | Qty: ${item.quantity}%0A`;
+  });
+
+  message += "%0A✅ Please confirm the order.";
+
+  // Replace with your WhatsApp number (with country code, no +)
+  const phoneNumber = "918838876287"; // Example: India number
+
+  // WhatsApp API link
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+
+  // Open in new tab
+  window.open(whatsappURL, "_blank");
+};
+
+
   return (
     <div className="cart-page">
     <div className="cart-container">
@@ -43,7 +68,7 @@ const Cart = () => {
           </ul>
           <div className="cart-summary">
             <h3>Total: ₹{total}</h3>
-            <button className="checkout-btn">Checkout</button>
+            <button className="checkout-btn" onClick={checkoutOnWhatsApp}>Checkout</button>
             <button className="clear-btn" onClick={clearCart}>
               Clear Cart
             </button>

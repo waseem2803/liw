@@ -83,16 +83,6 @@
   background: #333;
 }
 
-.cart-popup {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background: #4caf50;
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  animation: fadeInOut 2s ease-in-out forwards;
-}
-
 @keyframes fadeInOut {
   0% { opacity: 0; transform: translateY(-10px); }
   20% { opacity: 1; transform: translateY(0); }

@@ -114,16 +114,16 @@ function ProductDetail() {
           <button className="add-to-cart-btn" onClick={handleAddToCart}>
             Add to Cart
           </button>
-          {showMessage && <div className="cart-popup">Item added to cart!</div>}
 
           <button className="buy-now-btn" onClick={handleBuyNow}>
             Buy Now
           </button>
         </div>
+        {showMessage && <p className="cart-popup">Added to cart!</p>}
 
         {/* Cart Navigation */}
         <div className="cart-review">
-          <Link to="/cart">Go to Cart</Link>
+          <a href="/cart">Go to Cart</a>
         </div>
       </div>
     </div>

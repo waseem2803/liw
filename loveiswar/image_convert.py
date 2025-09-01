@@ -3,7 +3,7 @@ import os
 import pillow_avif  # enable AVIF support
 
 # Input folder (images will be replaced here)
-input_folder = r"src\assets\products"
+input_folder = r"src\assets\gallery"
 
 # Compression quality (0–100, lower = smaller size)
 quality = 50

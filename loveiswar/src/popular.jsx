@@ -40,7 +40,7 @@ function PopularProductsSection() {
               e.currentTarget.style.transform = `rotate(${item.tilt}deg)`;
             }}
           >
-            <div className="polaroid-frame">
+            <div className="polaroid-frame" onClick={() => window.location.href = `/product/${item.id}`}>
               {item.tag && <span className="tag">{item.tag}</span>}
               <img src={item.image} alt={item.name} className="product-image" />
               <div className="caption">

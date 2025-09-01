@@ -27,40 +27,51 @@
    font-weight: 400;
 }
 
-/* Sorting section */
-.sort-section {
-  margin-bottom: 2.5rem;
+.top-bar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 2.5rem;
+  margin-left: 10%;
+  margin-right: 10%;
   gap: 1rem;
+}
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
 }
 
 .sort-section label {
   font-size: 1rem;
   font-weight: 400;
+  margin-right: 0.5rem;
 }
 
 .sort-section select {
   padding: 0.5rem 1rem;
-  background-color: #1a1a1a;
+  background-color: #1f1f1f;
   color: #fff;
-  border: 1px solid #444;
-  border-radius: 0px;
-  font-size: 1rem;
+  border: 0px solid #444;
+  border-radius: 5px;
+  font-size: 0.8rem;
   outline: none;
   transition: border 0.2s ease;
 }
 
 .sort-section select:focus {
-  border-color: #ffffff;
+  border-color: #939393;
 }
 
 /* Grid layout */
 .products-grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   max-width: 1200px;
   margin: 0 auto;
 }
